@@ -1,6 +1,9 @@
 <?php
 require_once("../clases/class.comuna.php");
 
+/************************************
+DESDE PETICIÓN AJAX ENVIAR COMUNAS SELECCIONADAS POR REGIÓN
+*************************************/
 try {
 
     $comuna     = new Comuna;

@@ -1,6 +1,9 @@
 <?php
 require_once("../clases/class.voto.php");
 
+/************************************
+DESDE PETICIÓN AJAX ENVIAR VOTO A BBDD
+*************************************/
 try {
 
     $voto       = new Voto;

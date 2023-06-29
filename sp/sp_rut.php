@@ -1,6 +1,9 @@
 <?php
 require_once("../clases/class.voto.php");
 
+/************************************
+DESDE PETICIÓN AJAX COMPROBAR RUT EXISTENTE 
+*************************************/
 try {
 
     $voto   = new Voto;

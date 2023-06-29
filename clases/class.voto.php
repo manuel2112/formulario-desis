@@ -9,13 +9,19 @@ class Voto
     {
         $this->db = new Conexion();
     }
-
+    
+    /************************************
+    INGRESAR VOTO A BBDD
+    *************************************/
     public function insertVoto($nombre, $alias, $rut, $email, $comuna, $candidato, $como, $time)
     {
         $query  = "INSERT INTO votos ( nombre, alias, rut, email, comuna_id, candidato_id, enterar, created_at, updated_at ) VALUES ( '$nombre', '$alias', '$rut', '$email', '$comuna', '$candidato', '$como', '$time', '$time')";
         mysqli_query($this->db->connect(), $query);
     }
-
+    
+    /************************************
+    COMPROBAR RUT EXISTENTE DESDE BBDD
+    *************************************/
     public function getVotoRut($rut)
     {
         $query  = "SELECT * FROM votos WHERE rut = '".$rut."' ";

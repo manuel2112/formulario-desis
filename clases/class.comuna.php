@@ -9,7 +9,10 @@ class Comuna
     {
         $this->db = new Conexion();
     }
-
+    
+    /************************************
+    SELECCIONAR COMUNAS SEGÚN REGIÓN DESDE BBDD
+    *************************************/
     public function getComunas($id)
     {
         $query  = "SELECT * FROM comunas WHERE region_id = ".$id." ORDER BY name ASC";

@@ -9,7 +9,10 @@ class Region
     {
         $this->db = new Conexion();
     }
-
+    
+    /************************************
+    SELECCIONAR REGIONES DESDE BBDD
+    *************************************/
     public function getRegiones()
     {
         $query  = "SELECT * FROM regiones ORDER BY name ASC";

@@ -1,6 +1,9 @@
 
 $( document ).ready(function() {
     
+    /************************************
+    SELECCIONAR COMUNAS SEGÚN REGIÓN
+    *************************************/
     $( "#regionSelect" ).change(function() {
         
         const id = $('#regionSelect').val();
@@ -21,6 +24,9 @@ $( document ).ready(function() {
 
     });
     
+    /************************************
+    RECIBIR DATOS DESDE EL FORMULARIO PARA VALIDACIÓN
+    *************************************/
     $( "#send" ).click(function() {
         
         const nombre    = $('#nombreInput').val();
@@ -35,7 +41,10 @@ $( document ).ready(function() {
         validateRutExiste(nombre, alias, rut, email, comuna, candidato, como);
 
     });
-
+    
+    /************************************
+    ENVIAR DATA VALIDADA A BBDD
+    *************************************/
     function sendData(nombre, alias, rut, email, comuna, candidato, como){
 
         $.ajax({
@@ -59,7 +68,10 @@ $( document ).ready(function() {
             }
         });
     }
-
+    
+    /************************************
+    VALIDACIÓN FORMULARIO
+    *************************************/
     function validateForm(nombre, alias, rut, email, comuna, candidato){
 
         const boolNombre    = validateNombre(nombre);
@@ -76,7 +88,10 @@ $( document ).ready(function() {
             return false
         }
     }
-
+    
+    /************************************
+    COMPROBAR SO RUT EXISTE SINO ENVÍA DATA A BBDD
+    *************************************/
     function validateRutExiste(nombre, alias, rut, email, comuna, candidato, como){
 
         $.ajax({
@@ -101,7 +116,10 @@ $( document ).ready(function() {
             }
         });
     }
-
+    
+    /************************************
+    VALIDAR NOMBRE
+    *************************************/
     function validateNombre(value){
         if( !value ){
             $("#nombreInput").addClass("is-invalid");
@@ -113,7 +131,10 @@ $( document ).ready(function() {
             return false;
         }
     }
-
+    
+    /************************************
+    VALIDAR ALIAS
+    *************************************/
     function validateAlias(value){
         if( !value ){
             $("#aliasInput").addClass("is-invalid");
@@ -135,7 +156,10 @@ $( document ).ready(function() {
             }
         }
     }
-
+    
+    /************************************
+    VALIDAR RUT Y DAR FORMATO
+    *************************************/
     function validateRut(value){
         if( !value ){
             $("#rutInput").addClass("is-invalid");
@@ -152,7 +176,10 @@ $( document ).ready(function() {
             return false;
         }
     }
-
+    
+    /************************************
+    VALIDAR EMAIL
+    *************************************/
     function validateEmail(value){
         
         if( !value ){
@@ -169,7 +196,10 @@ $( document ).ready(function() {
             return false;
         }
     }
-
+    
+    /************************************
+    VALIDAR COMUNA SELECCIONADA
+    *************************************/
     function validateComuna(value){
         if( !value ){
             $("#cmbComuna").addClass("is-invalid");
@@ -181,7 +211,10 @@ $( document ).ready(function() {
             return false;
         }
     }
-
+    
+    /************************************
+    VALIDAR CANDIDATO SELECCIONADO
+    *************************************/
     function validateCandidato(value){
         if( !value ){
             $("#candidatoSelect").addClass("is-invalid");
@@ -193,7 +226,10 @@ $( document ).ready(function() {
             return false;
         }
     }
-
+    
+    /************************************
+    VALIDAR COMO SE ENTERARON 
+    *************************************/
     function validateComo(){
 
         let selected = new Array();

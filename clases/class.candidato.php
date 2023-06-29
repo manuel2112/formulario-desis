@@ -9,7 +9,10 @@ class Candidato
     {
         $this->db = new Conexion();
     }
-
+    
+    /************************************
+    SELECCIONAR CANDIDATOS DESDE BBDD
+    *************************************/
     public function getCandidatos()
     {
         $query  = "SELECT * FROM candidato ORDER BY name ASC";

@@ -72,8 +72,6 @@ function Valida_Rut( Objeto )
 
 }
 
-
-
 function formateaRut(rut) {
 
     var actual = rut.replace(/^0+/, "");
